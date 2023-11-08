@@ -169,3 +169,8 @@ SELECT Player.player_name, Hero.hero_name
 FROM Player
 INNER JOIN Hero ON Player.hero_id = Hero.hero_id
 WHERE Hero.is_active = true;
+
+SELECT hero.hero_name
+FROM hero
+INNER JOIN class ON hero.class_id = class.class_id
+WHERE class.class_name LIKE LOWER('%Archer%');

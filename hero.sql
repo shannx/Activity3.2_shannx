@@ -174,3 +174,9 @@ SELECT hero.hero_name
 FROM hero
 INNER JOIN class ON hero.class_id = class.class_id
 WHERE class.class_name LIKE LOWER('%Archer%');
+
+FROM class
+INNER JOIN hero ON class.class_id = hero.class_id
+INNER JOIN player ON hero.hero_id = player.hero_id
+GROUP BY class.class_name
+ORDER BY AVG(player.player_level) DESC;
